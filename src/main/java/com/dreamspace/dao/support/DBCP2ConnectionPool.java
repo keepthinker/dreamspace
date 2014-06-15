@@ -7,14 +7,16 @@ import javax.sql.DataSource;
 
 import org.apache.commons.dbcp2.BasicDataSource;
 
+import com.dreamspace.util.ConfigurationInfoUtil;
+
 class DBCP2ConnectionPool implements DBConnectionPool{
-	private final String protocol = "jdbc:mysql:";
-	private final String accountDB = "root";
-	private final String passwordDB = "123456";
-	private final String dbName = "crm_pro";
-	private final String driverName="com.mysql.jdbc.Driver";
+	private final String protocol = ConfigurationInfoUtil.getDBPropertyByKey("property");
+	private final String account = ConfigurationInfoUtil.getDBPropertyByKey("account");
+	private final String password = ConfigurationInfoUtil.getDBPropertyByKey("password");
+	private final String dbName = ConfigurationInfoUtil.getDBPropertyByKey("dbName");
+	private final String driverName=ConfigurationInfoUtil.getDBPropertyByKey("driverName");
 	private final String dbUrl = protocol + "//127.0.0.1:3306/"+dbName+"?useUnicode=true&characterEncoding=utf8";
-	private  DataSource dataSource;//application scope sharing
+	private  DataSource dataSource;
 	public Connection getConnection(){
 		try {
 			return dataSource.getConnection();
@@ -26,11 +28,11 @@ class DBCP2ConnectionPool implements DBConnectionPool{
 	public DBCP2ConnectionPool(){
 		dataSource = setupDataSource(dbUrl);
 	}
-	public DataSource setupDataSource(String connectURI) {
+	private DataSource setupDataSource(String connectURI) {
 		BasicDataSource ds = new BasicDataSource();
 		ds.setDriverClassName(driverName);
-		ds.setUsername(accountDB);
-		ds.setPassword(passwordDB);
+		ds.setUsername(account);
+		ds.setPassword(password);
 		ds.setUrl(connectURI);
 		return ds;
 	}
@@ -39,9 +41,16 @@ class DBCP2ConnectionPool implements DBConnectionPool{
 		System.out.println("NumActive: " + bds.getNumActive());
 		System.out.println("NumIdle: " + bds.getNumIdle());
 	}
-	public void shutdownDataSource() throws SQLException {
+	public boolean shutdownDataSource(){
 		BasicDataSource bds = (BasicDataSource) dataSource;
-		bds.close();
+		try {
+			bds.close();
+			return true;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return false;
+		}
 	}
 	public String getConnectionPoolState() {
 		BasicDataSource bds = (BasicDataSource) dataSource;

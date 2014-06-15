@@ -7,8 +7,8 @@ import java.sql.Connection;
  *
  */
 public class DatabaseHelper {
-	private  DBConnectionPool dbcp2ConnectionPool;
-	public Connection getConnectionFromDBCP2() {
+	private static DBConnectionPool dbcp2ConnectionPool;
+	public static Connection getConnectionFromDBCP2() {
 		if(dbcp2ConnectionPool!=null){
 			return dbcp2ConnectionPool.getConnection();
 		}else{
@@ -16,11 +16,16 @@ public class DatabaseHelper {
 			return dbcp2ConnectionPool.getConnection();
 		}
 	}
-	public String getConnectionPoolState(){
+	public static String getConnectionPoolState(){
 		String state = "没有初始化connection pool";
 		if(dbcp2ConnectionPool!=null){
 			state=dbcp2ConnectionPool.getConnectionPoolState();
 		}
 		return state;
+	}
+	public static void closeConnectionPool(){
+		if(dbcp2ConnectionPool.shutdownDataSource()==false){
+			dbcp2ConnectionPool=null;
+		}
 	}
 }

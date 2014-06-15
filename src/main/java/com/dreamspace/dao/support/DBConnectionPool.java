@@ -12,4 +12,6 @@ public interface DBConnectionPool {
 	 * 返回数据库连接池的状态信息
 	 */
 	public String getConnectionPoolState();
+	
+	public boolean shutdownDataSource();
 }
