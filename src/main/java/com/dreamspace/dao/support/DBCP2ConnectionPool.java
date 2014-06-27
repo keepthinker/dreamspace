@@ -10,7 +10,7 @@ import org.apache.commons.dbcp2.BasicDataSource;
 import com.dreamspace.util.ConfigurationInfoUtil;
 
 class DBCP2ConnectionPool implements DBConnectionPool{
-	private final String protocol = ConfigurationInfoUtil.getDBPropertyByKey("property");
+	private final String protocol = ConfigurationInfoUtil.getDBPropertyByKey("protocol");
 	private final String account = ConfigurationInfoUtil.getDBPropertyByKey("account");
 	private final String password = ConfigurationInfoUtil.getDBPropertyByKey("password");
 	private final String dbName = ConfigurationInfoUtil.getDBPropertyByKey("dbName");
