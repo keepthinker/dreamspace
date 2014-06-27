@@ -1,0 +1,21 @@
+.字体1 {
+	font-family: "宋体";
+	font-size: 34px;
+	font-style: italic;
+	font-weight: bold;
+	position:absolute;
+	color: #000000;
+	text-decoration: blink;
+	letter-spacing: normal;
+	word-spacing: normal;
+	top: 242px;
+	left: 243px;
+	width: 557px;
+}
+
+.字体2 
+{
+font-family:"宋体";
+font-size:24px;
+font-weight:bold;
+}
