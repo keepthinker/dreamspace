@@ -2,7 +2,7 @@ package com.dreamspace.dao.support;
 
 import java.sql.Connection;
 
-public interface DBConnectionPool {
+interface DBConnectionPool {
 	/**从数据库连接池中获取一个connection<br/>
 	 * 获取失败返回null
 	 * @return

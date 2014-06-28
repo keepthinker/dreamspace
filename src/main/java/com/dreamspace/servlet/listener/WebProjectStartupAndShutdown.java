@@ -3,7 +3,6 @@ package com.dreamspace.servlet.listener;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
-import com.dreamspace.dao.support.DBConnectionPool;
 import com.dreamspace.dao.support.DatabaseHelper;
 /**
  * 当项目启动关闭时运行运行

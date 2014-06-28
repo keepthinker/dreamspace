@@ -1,6 +1,6 @@
 package com.dreamspace.dao.support;
 
 
-public class RDBBlogDAO {
+class RDBBlogDAO {
 
 }
