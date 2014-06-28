@@ -6,8 +6,16 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+/**
+ * http protocol<br/>
+ * input parammeter:<br/>
+ * 		name<br/>
+ * 		password<br/>
+ *
+ */
 public class Login extends HttpServlet{
+
+	private static final long serialVersionUID = 7306799783479041245L;
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)

@@ -6,8 +6,14 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+/**
+ * input parammeter:<br/>
+ * 		<br/>
+ * 		pageSize<br/>
+ */
 public class BlogDisplaying extends HttpServlet{
+
+	private static final long serialVersionUID = 4696736527892907523L;
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)

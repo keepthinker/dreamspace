@@ -4,11 +4,29 @@
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
 <title>博客编辑</title>
 <style type="text/css">
+.btn
+{
+	width:250px;
+	height:40px;
+	background:url("image/blog_edit/bg.jpg") no-repeat left top;
+	color:#FFF;
+	font-size:25px;
+	color:#000000;
+}
+.btn12
+{
+	width:143px;
+	height:40px;
+	background:url("image/blog_edit/bg12.jpg") no-repeat left top;
+	color:#FFF;
+	font-size:20px;
+	color:#000000;
+}
 <!--
 #Layer1 {
 	position:absolute;
-	left:159px;
-	top:217px;
+	left:207px;
+	top:221px;
 	width:140px;
 	height:125px;
 	z-index:1;
@@ -19,13 +37,21 @@
 	font-weight: bold;
 }
 .STYLE2 {font-size: 16px}
+.STYLE3 {
+	color: #0000FF;
+	font-weight: bold;
+}
+.STYLE4 {
+	color: #CC0099;
+	font-size: 18px;
+}
 -->
 </style>
 </head>
 
-<body background="bj1.jpg">
-<div id="Layer1"><img src="book1.jpg" width="140" height="135" /></div>
-<div align="center"><img src="bb.jpg" width="1000" height="200" /></div>
+<body background="image\blog_edit\bj1.jpg">
+<div id="Layer1"><img src="image\blog_edit\book1.jpg" width="140" height="135" /></div>
+<div align="center"><img src="image\blog_edit\bb.jpg" width="1000" height="200" /></div>
 
 
 <table width="1160" border="0" cellpadding="0" cellspacing="0">
@@ -33,36 +59,25 @@
   <tr>
     <td width="290" height="91">&nbsp;</td>
     <td width="143">&nbsp;</td>
-    <td width="727" valign="top"><p>欢迎来到梦空间-博客编辑页面。</p>
-      <p>立刻写下此时的感想吧！</p></td>
+    <td width="727" valign="top"><marquee direction="left" scrolldelay="150"><p class="STYLE4">欢迎来到梦空间-博客编辑页面。 立刻写下此时的感想吧！</p>
+    </marquee>
+      <p><span class="STYLE1">盛夏的果实</span><span class="STYLE3">的梦空间 </span></p></td>
   </tr>
   <tr>
     <td height="54">&nbsp;</td>
-    <td valign="bottom"><span class="STYLE1">盛夏的果实</span></td>
+    <td valign="bottom"><span class="STYLE1"></span></td>
     <td valign="top"><table width="100%" border="1" cellpadding="0" cellspacing="0" bordercolor="#CCCCCC">
       <!--DWLayoutTable-->
       
       <tr>
-        <td width="240" height="52" valign="middle"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="240" height="50">
-          <param name="BGCOLOR" value="" />
-          <param name="movie" value="button3.swf" />
-          <param name="quality" value="high" />
-          <param name="SCALE" value="noborder" />
-          <embed src="button3.swf" width="240" height="50" quality="high" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" scale="noborder" ></embed>
-          </object></td>
-          <td width="240" valign="top"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="240" height="50">
-            <param name="movie" value="button5.swf" />
-            <param name="quality" value="high" />
-            <param name="SCALE" value="noborder" />
-            <embed src="button5.swf" width="240" height="50" quality="high" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" scale="noborder" ></embed>
-          </object></td>
-          <td width="239" valign="top"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="238" height="50">
-            <param name="BGCOLOR" value="" />
-            <param name="movie" value="button6.swf" />
-            <param name="quality" value="high" />
-            <param name="SCALE" value="noborder" />
-            <embed src="button6.swf" width="238" height="50" quality="high" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" scale="noborder" ></embed>
-          </object></td>
+        <td width="250" height="52" valign="middle"><a href="homepage.html">
+          <input name="按钮" type="button" class="btn" onmouseover="this.style.backgroundPosition='left -40px'" 
+		    onmouseout="this.style.backgroundPosition='left top'" value="我的主页" />
+        </a></td>
+          <td width="251" valign="middle"><input name="按钮" type="button" class="btn" onmouseover="this.style.backgroundPosition='left -40px'" 
+		    onmouseout="this.style.backgroundPosition='left top'" value="查看已有博文" /></td>
+          <td width="250" valign="middle"><input name="按钮" type="button" class="btn" onmouseover="this.style.backgroundPosition='left -40px'" 
+		    onmouseout="this.style.backgroundPosition='left top'" value="退出当前编辑" /></td>
         </tr>
       
     </table></td>
@@ -131,26 +146,14 @@
       </tr>
       <tr>
         <td height="41">&nbsp;</td>
-        <td valign="top"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="132" height="40">
-          <param name="BGCOLOR" value="" />
-          <param name="movie" value="button7.swf" />
-          <param name="quality" value="high" /><param name="SCALE" value="noborder" />
-          <embed src="button7.swf" width="132" height="40" quality="high" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" scale="noborder" ></embed>
-        </object></td>
+        <td valign="top"><input name="按钮" type="button" class="btn12" onmouseover="this.style.backgroundPosition='left -40px'" 
+		    onmouseout="this.style.backgroundPosition='left top'" value="发布(R)" /></td>
         <td>&nbsp;</td>
-        <td valign="top"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="131" height="41">
-          <param name="movie" value="button8.swf" />
-          <param name="quality" value="high" /><param name="SCALE" value="noborder" />
-          <embed src="button8.swf" width="131" height="41" quality="high" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" scale="noborder" ></embed>
-        </object></td>
+        <td valign="top"><input name="按钮" type="button" class="btn12" onmouseover="this.style.backgroundPosition='left -40px'" 
+		    onmouseout="this.style.backgroundPosition='left top'" value="取消(C)" /></td>
         <td>&nbsp;</td>
-        <td valign="top"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="132" height="42">
-          <param name="BGCOLOR" value="" />
-          <param name="movie" value="button12.swf" />
-          <param name="quality" value="high" />
-          <param name="SCALE" value="noborder" />
-          <embed src="button12.swf" width="132" height="42" quality="high" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" scale="noborder" ></embed>
-        </object></td>
+        <td valign="top"><input name="按钮" type="button" class="btn12" onmouseover="this.style.backgroundPosition='left -40px'" 
+		    onmouseout="this.style.backgroundPosition='left top'" value="保存草稿(S)" /></td>
         <td>&nbsp;</td>
       </tr>     
     </table></td>

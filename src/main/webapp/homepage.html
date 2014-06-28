@@ -4,6 +4,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
 <title>梦空间主页</title>
 <style type="text/css">
+.btn
+{
+	width:220px;
+	height:40px;
+	background:url("image/homepage/bg.jpg") no-repeat left top;
+	color:#FFF;
+	font-size:25px;
+	color:#000000;
+}
 <!--
 .STYLE1 {color: #000000}
 #Layer2 {
@@ -43,10 +52,10 @@
 }
 #Layer4 {
 	position:absolute;
-	left:1006px;
-	top:310px;
-	width:131px;
-	height:58px;
+	left:926px;
+	top:322px;
+	width:220px;
+	height:41px;
 	z-index:4;
 }
 #Layer5 {
@@ -92,11 +101,11 @@ border: thick #666666;
 </style>
 </head>
 
-<body background="bj1.jpg">
+<body background="image\homepage\bj1.jpg">
 <div id="Layer8">
 <marquee direction="left" scrolldelay="300">欢迎来到梦空间-博客</marquee></div>
 <div>
-  <div align="center"><img src="bb.jpg" width="1000" height="200" /></div>
+  <div align="center"><img src="image\homepage\bb.jpg" width="1000" height="200" /></div>
 </div>
 <div id="Layer2">
   <div align="center" class="STYLE2">
@@ -109,20 +118,16 @@ border: thick #666666;
   <p>诉说现在的心情？ 保存此时的梦想？</p>
   <p>开始写博客吧，记录生活与梦想的点点滴滴......</p>
 </div>
-<div id="Layer4">
-  <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="131" height="57">
-    <param name="BGCOLOR" value="" />
-    <param name="movie" value="button1.swf" />
-    <param name="quality" value="high" /><param name="SCALE" value="noborder" />
-    <embed src="button1.swf" width="131" height="57" quality="high" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" scale="noborder" ></embed>
-  </object>
+<div id="Layer4"><a href="blog_edit.html">
+  <input name="按钮" type="button" class="btn" onmouseover="this.style.backgroundPosition='left -40px'" 
+		    onmouseout="this.style.backgroundPosition='left top'" value="马上写博客" /></a>
 </div>
 
 <blockquote>
   <blockquote>
     <blockquote>
       <blockquote>
-        <p align="justify" class="STYLE1"><img src="book1.jpg" width="140" height="140" /></p>
+        <p align="justify" class="STYLE1"><img src="image\homepage\book1.jpg" width="140" height="140" /></p>
       </blockquote>
     </blockquote>
   </blockquote>
@@ -138,23 +143,23 @@ border: thick #666666;
         <td height="39" colspan="2" valign="middle"><div align="left" class="bordercolor"><span class="STYLE6">我 的 梦 空 间</span></div></td>
   </tr>
       <tr>
-        <td width="45" height="45" valign="top"><img src="ziliao.png" width="45" height="45" /></td>
-    <td width="161" valign="middle"><span class="STYLE6"><a href="查看用户资料.html">我的资料</a></span></td>
+        <td width="45" height="45" valign="top"><img src="image\homepage\ziliao.png" width="45" height="45" /></td>
+    <td width="161" valign="middle"><span class="STYLE6"><a href="user_info.html">我的资料</a></span></td>
   </tr>
       <tr>
-        <td height="45" valign="top"><img src="boke.jpg" width="45" height="44" /></td>
+        <td height="45" valign="top"><img src="image\homepage\boke.jpg" width="45" height="44" /></td>
     <td valign="middle"><span class="STYLE6"><a href="http://www.baidu.com/">我的博客</a></span></td>
   </tr>
       <tr>
-        <td height="45" valign="top"><img src="pinglun.png" width="45" height="45" /></td>
+        <td height="45" valign="top"><img src="image\homepage\pinglun.png" width="45" height="45" /></td>
     <td valign="middle"><span class="STYLE6"><a href="http://www.baidu.com/">我的评论</a></span></td>
   </tr>
       <tr>
-        <td height="45" valign="top"><img src="canyu.png" width="45" height="45" /></td>
+        <td height="45" valign="top"><img src="image\homepage\canyu.png" width="45" height="45" /></td>
     <td valign="middle"><span class="STYLE6"><a href="http://www.baidu.com/">我的参与</a></span></td>
   </tr>
       <tr>
-        <td height="45" valign="top"><img src="zuixinpinglun.png" width="45" height="45" /></td>
+        <td height="45" valign="top"><img src="image\homepage\zuixinpinglun.png" width="45" height="45" /></td>
     <td valign="middle"><span class="STYLE6"><a href="http://www.baidu.com/">最新评论</a></span></td>
   </tr>
     </table>    </td>
@@ -167,8 +172,9 @@ border: thick #666666;
           <p>              
             <INPUT TYPE="text" id="k" value="输入搜索账号" onmouseover="this.style.borderColor='#FF6600'" onmouseout="this.style.borderColor=''" 
 			onFocus="if(value =='输入搜索账号'){value =''}" onBlur="if (value ==''){value='输入搜索账号'}">
-              <INPUT TYPE="button" VALUE="搜索" ONCLICK="xx()">
-                     <SCRIPT LANGUAGE="JavaScript">
+              <a href="search_friend.html"><INPUT TYPE="button" VALUE="搜索" ONCLICK="xx()"></a>
+                     
+  <SCRIPT LANGUAGE="JavaScript">
   <!--
   function xx(){
           var k=document.getElementById("k").value;
@@ -259,15 +265,15 @@ border: thick #666666;
         <td height="45" colspan="2" valign="middle"><span class="STYLE6">我 的 应 用</span></td>
         </tr>
       <tr>
-        <td width="45" height="45" valign="top"><img src="dongtai.png" width="45" height="45" /></td>
+        <td width="45" height="45" valign="top"><img src="image\homepage\dongtai.png" width="45" height="45" /></td>
           <td width="161" valign="middle"><span class="STYLE6"><a href="http://www.baidu.com/">博友动态</a></span></td>
         </tr>
       <tr>
-        <td height="45" valign="top"><img src="remen.png" width="45" height="45" /></td>
+        <td height="45" valign="top"><img src="image\homepage\remen.png" width="45" height="45" /></td>
           <td valign="middle"><span class="STYLE6"><a href="http://www.baidu.com/">热门博客</a></span></td>
         </tr>
       <tr>
-        <td height="47" valign="top"><img src="dingyue.png" width="45" height="45" /></td>
+        <td height="47" valign="top"><img src="image\homepage\dingyue.png" width="45" height="45" /></td>
           <td valign="middle"><span class="STYLE6"><a href="http://www.baidu.com/">订阅资料</a></span></td>
         </tr>
       <tr>

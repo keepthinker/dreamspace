@@ -6,8 +6,14 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+/**
+ * input parammeter:<br/>
+ * 		blogId<br/>
+ * 		pageSize<br/>
+ */
 public class CommentAjax extends HttpServlet{
+
+	private static final long serialVersionUID = -1949568604873844173L;
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)

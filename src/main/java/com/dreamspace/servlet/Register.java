@@ -6,8 +6,16 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+/**
+ * http protocol<br/>
+ * input parameter:<br/>
+ * 		name<br/>
+ * 		password<br/>
+ * 		profile<br/>
+ */
 public class Register extends HttpServlet{
+
+	private static final long serialVersionUID = 3661589953313097009L;
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
