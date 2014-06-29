@@ -1,0 +1,18 @@
+ul {
+	list-style-type: none;
+	padding: 0px;
+	margin: 0px;
+}
+
+ul li {
+	background-repeat: no-repeat;
+	background-position: 0px 5px;
+	padding-left: 0px;
+}
+
+em {
+	margin-left: 2px;
+	margin-right: 2px;
+	font-style: normal;
+	font-weight: normal;
+}

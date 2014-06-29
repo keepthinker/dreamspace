@@ -1,0 +1,29 @@
+#up_floating_text {
+	width: 50%;
+	margin-left: 30%;
+	font-size: 20px;
+	color: #CC0099;
+}
+
+#up_left_section {
+	float: left;
+	margin-left: 10%;
+}
+
+#up_middle_section {
+	float: left;
+	width: 50%;
+	margin-left: 10%;
+}
+
+#up_right_section{
+	margin-right:1%;
+}
+.button {
+	width: 150px;
+	height: 40px;
+	background: url("../image/homepage/bg.jpg") no-repeat left top;
+	color: #FFF;
+	font-size: 20px;
+	color: #000000;
+}
