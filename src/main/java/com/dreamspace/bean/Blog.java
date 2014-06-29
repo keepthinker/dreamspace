@@ -53,4 +53,12 @@ public class Blog {
 	public void setCommentSum(int commentSum) {
 		this.commentSum = commentSum;
 	}
+	@Override
+	public String toString() {
+		return "Blog [id=" + id + ", author=" + author + ", title=" + title
+				+ ", content(partial)=" + content.substring(0, 50) + ", createdTime=" + createdTime
+				+ ", modifiedTime=" + modifiedTime + ", commentSum="
+				+ commentSum + "]";
+	}
+
 }

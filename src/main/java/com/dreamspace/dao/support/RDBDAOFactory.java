@@ -9,7 +9,7 @@ public class RDBDAOFactory extends DAOFactory{
 	@Override
 	public BlogDAO createBlogDAO() {
 		// TODO Auto-generated method stub
-		return null;
+		return new RDBBlogDAO();
 	}
 
 	@Override
@@ -20,8 +20,8 @@ public class RDBDAOFactory extends DAOFactory{
 
 	@Override
 	public UserDAO createUserDAO() {
-		// TODO Auto-generated method stub
-		return null;
+		return new RDBUserDAO();
+		
 	}
 	
 }

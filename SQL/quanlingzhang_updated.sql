@@ -22,13 +22,14 @@ CREATE TABLE blog (
   user_id int(11) DEFAULT NULL,
   title varchar(50) DEFAULT NULL,
   content varchar(20000) DEFAULT NULL,
-  created_time datetime DEFAULT NULL,
-  modefied_time datetime DEFAULT NULL,
+  created_time datetime  NULL,
+  modified_time datetime  NULL,
   comment_sum int(11) DEFAULT NULL,
   PRIMARY KEY (id),
   KEY user_id (user_id),
   CONSTRAINT blog_ibfk_1 FOREIGN KEY (user_id) REFERENCES user (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+	
 
 CREATE TABLE comment (
   id int(11) NOT NULL AUTO_INCREMENT,
@@ -40,7 +41,6 @@ CREATE TABLE comment (
   KEY blog_id (blog_id),
   CONSTRAINT comment_ibfk_1 FOREIGN KEY (blog_id) REFERENCES blog (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
 
 
 -- shiro

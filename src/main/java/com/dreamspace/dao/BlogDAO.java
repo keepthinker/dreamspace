@@ -14,7 +14,7 @@ public interface BlogDAO {
 	 * @param id
 	 * @return
 	 */
-	List<Blog> getSimpleBlogByUserId(int id);
+	List<Blog> getSimpleBlogListByUserId(int id);
 	/**
 	 * 只获取博客文章的内容
 	 * @param id

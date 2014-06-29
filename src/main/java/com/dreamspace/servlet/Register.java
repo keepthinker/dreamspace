@@ -6,6 +6,9 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import org.apache.log4j.Logger;
+
 /**
  * http protocol<br/>
  * input parameter:<br/>
@@ -14,21 +17,21 @@ import javax.servlet.http.HttpServletResponse;
  * 		profile<br/>
  */
 public class Register extends HttpServlet{
-
+	Logger logger=Logger.getLogger(Register.class);
 	private static final long serialVersionUID = 3661589953313097009L;
-
+	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		super.doGet(req, resp);
+		doPost(req,resp);
 	}
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		super.doPost(req, resp);
+		logger.info("enter Register servlet");
 	}
 
 }

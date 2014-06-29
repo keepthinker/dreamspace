@@ -10,5 +10,10 @@ public interface UserDAO {
 	 */
 	public boolean addRegisterInfo(RegisterInfo info);
 	public boolean addUser(User u);
-	
+	/**
+	 * 如果数据库中没发现想要的数据的话返回-1
+	 * @param username
+	 * @return
+	 */
+	public int getUserIdByUsername(String username);
 }
