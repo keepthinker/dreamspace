@@ -14,7 +14,7 @@ public class RDBUserDAOTest extends TestCase {
 
 	public void testGetUserIdByUsername() {
 		UserDAO userDao=DAOFactoryHelper.getUserDAO();
-		int id=userDao.getUserIdByUsername("keepthinker");
+		int id=userDao.getUserIdByUserName("keepthinker");
 		System.out.println(id);
 	}
 

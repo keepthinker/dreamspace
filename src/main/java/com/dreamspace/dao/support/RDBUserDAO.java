@@ -20,7 +20,7 @@ class RDBUserDAO implements UserDAO{
 
 		return false;
 	}
-	public int getUserIdByUsername(String username) {
+	public int getUserIdByUserName(String username) {
 		Connection con=DatabaseHelper.getConnectionFromDBCP2();
 		PreparedStatement ps=null;
 		ResultSet rs=null;

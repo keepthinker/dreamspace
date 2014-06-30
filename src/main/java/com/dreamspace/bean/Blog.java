@@ -5,22 +5,22 @@ import java.util.Date;
 
 public class Blog {
 	private int id;
-	private String author;
+	private User author;
 	private String title;
 	private String content;
 	private Date createdTime;
 	private Date modifiedTime;
 	private int commentSum;
+	public void setId(int id){
+		this.id=id;
+	}
 	public int getId() {
 		return id;
 	}
-	public void setId(int id) {
-		this.id = id;
-	}
-	public String getAuthor() {
+	public User getAuthor() {
 		return author;
 	}
-	public void setAuthor(String author) {
+	public void setAuthor(User author) {
 		this.author = author;
 	}
 	public String getTitle() {
@@ -56,7 +56,7 @@ public class Blog {
 	@Override
 	public String toString() {
 		return "Blog [id=" + id + ", author=" + author + ", title=" + title
-				+ ", content(partial)=" + content.substring(0, 50) + ", createdTime=" + createdTime
+				+ ", content(partial)=" + (content.length()<50?content:content.substring(0, 50)) + ", createdTime=" + createdTime
 				+ ", modifiedTime=" + modifiedTime + ", commentSum="
 				+ commentSum + "]";
 	}

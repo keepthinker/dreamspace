@@ -5,10 +5,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http_equiv="Content_Type" content="text/html; charset=utf-8" />
-<link href="${pageContext.request.contextPath}/css/common.css"
-	rel="stylesheet" type="text/css" media="all" />
-<link href="${pageContext.request.contextPath}/css/blog_display.css"
-	rel="stylesheet" type="text/css" media="all" />
+<link href="css/common.css" rel="stylesheet" type="text/css" media="all" />
+<%-- ${pageContext.request.contextPath}/ --%>
+<link href="css/blog_display.css" rel="stylesheet" type="text/css"
+	media="all" />
 <title>梦空间主页</title>
 </head>
 
@@ -27,7 +27,7 @@
 			<div
 				style="float: left; margin-left: 20px; margin-top: 20px; font-size: 18px">
 				<p>
-					<span style="color: darkblue;">${requestScope.userName}</span><br />
+					<span style="color: darkblue;">${requestScope.user.nickname}</span><br />
 					<em style="margin-left: 30px">的梦空间</em>
 				</p>
 			</div>
@@ -38,8 +38,8 @@
 			<p>开始写博客吧，记录生活与梦想的点点滴滴......</p>
 		</div>
 		<div id="up_right_section" style="float: right;">
-			<a href="blog_edit.jsp"> <input name="按钮" type="button"
-				class="button"
+			<a href="${pageContext.request.contextPath}/blog_add"> <input
+				name="按钮" type="button" class="button"
 				onmouseover="this.style.backgroundPosition='left -40px'"
 				onmouseout="this.style.backgroundPosition='left top'" value="马上写博客" /></a>
 			<a href="${pageContext.request.contextPath}/logout"> <input
@@ -56,10 +56,10 @@
 			<div id="left_my_nav_menu">
 				<h4 class="left_section_header">我 的 梦 空 间</h4>
 				<ul>
-					<li><a href="#"><span><img
+					<li><a href="user_info.html"><span><img
 								src="image\homepage\ziliao.png" width="40" height="40" /><span
 								class="left_menu_item">我的资料</span></span></a></li>
-					<li><a href="#"><span><img
+					<li><a href="blog_display"><span><img
 								src="image\homepage\boke.jpg" width="40" height="40"><span
 								class="left_menu_item">我的博客</span></span></a></li>
 					<li><a href="#"><span><img
@@ -87,13 +87,19 @@
 		</div>
 		<div id="blog_content">
 			<c:forEach var="blog" items="${blogList }">
-				<div>
-					<h3>${blog.title }</h3>
+				<div
+					style="padding-bottom: 16px; border-bottom-style: groove; border-bottom-width: 1px;">
+					<a href=""# style="color:black"><h3>${blog.title }</h3></a>
 					<div style="font-size: 12px">
-						作者：<em style="color: darkgreen">${blog.author}</em>
+						作者：<em style="color: darkgreen">${blog.author.nickname}</em>
 						&nbsp发布时间：${blog.createdTime} &nbsp修改时间：${blog.modifiedTime}
 					</div>
 					<p style="font-size: 14px">${blog.content}</p>
+					<div style="float: right; font-size: 12px;">
+						<a onmouseover="this.style.textDecoration='underline'"
+							onmouseout="this.style.textDecoration='none'" style="color: blue"
+							href="#"> <span><em>评论(23)</em></a> </span>
+					</div>
 				</div>
 			</c:forEach>
 

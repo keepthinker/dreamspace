@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -8,23 +9,24 @@
 	rel="stylesheet" type="text/css" media="all" />
 <title>编辑博客</title>
 </head>
-<body>
+<body background="image/registry/bj1.jpg"
+	style="background-color: rgba(183, 226, 244, 0.46)">
 	<div id="top_section">
-		<div align="center">
+		<!-- <div align="center">
 			<img src="image\homepage\bb.jpg" width="1000" height=200; " />
-		</div>
+		</div> -->
 		<div id="up_floating_text">
 			<marquee direction="left" scrolldelay="300">欢迎来到梦空间-博客编辑页面。
 				立刻写下此时的感想吧！</marquee>
 		</div>
 		<div id="up_left_section">
 			<div style="float: left">
-				<img src="image\homepage\book1.jpg" width="140" height="140" />
+				<img src="image/homepage/book1.jpg" width="140" height="140" />
 			</div>
 			<div
 				style="float: left; margin-left: 20px; margin-top: 20px; font-size: 18px">
 				<p>
-					<span style="color: darkblue;">${requestScope.userName}</span><br />
+					<span style="color: darkblue;">${requestScope.user.nickname}</span><br />
 					<em style="margin-left: 30px">的梦空间</em>
 				</p>
 			</div>
@@ -43,7 +45,7 @@
 				name="按钮" type="button" class="button"
 				onmouseover="this.style.backgroundPosition='left -40px'"
 				onmouseout="this.style.backgroundPosition='left top'" value="查看我的博文" /></a>
-			<a href="${pageContext.request.contextPath}/blog_update"> <input
+			<a href="${pageContext.request.contextPath}/blog_display"> <input
 				name="按钮" type="button" class="button"
 				onmouseover="this.style.backgroundPosition='left -40px'"
 				onmouseout="this.style.backgroundPosition='left top'" value="退出当前编辑" /></a>
@@ -51,8 +53,9 @@
 	</div>
 	<hr width="100%" align="center" />
 	<div id="edit_area"
-		style="width: 90%; height: 550px; border-style: groove; border-width: 3px; margin-left: 5%; margin-right: 5%;margin-bottom:110px;">
-		<form method="post" action="${pageContext.request.contextPath}/blog_update">
+		style="width: 90%; height: 100%; border-style: groove; border-width: 3px; margin-left: 5%; margin-right: 5%; margin-bottom: 110px;">
+		<form method="post"
+			action="${pageContext.request.contextPath}/blog_update_db">
 			<div style="font-size: 20px; margin: 25px">
 				<label>标题</label><input type="text" name="title"
 					style="font-size: 20px;; margin-left: 20px; width: 40%; height: 25px" />
@@ -62,7 +65,12 @@
 				<textarea name="content"
 					style="margin-left: 20px; margin-bottom: 0px; resize: vertical; height: 450px; width: 93%"></textarea>
 			</div>
-			<input style="float:right;margin-right:10%" type="submit" value="提交" class="button"
+			<input type="hidden" name="update_type" value="${updateType }" />
+			<c:if test="${updateType ne 'blog_add'}">
+				<input type="hidden" name="blog_id" value="${blogId }" />
+			</c:if>
+			<input style="float: right; margin-right: 10%" type="submit"
+				value="提交" class="button"
 				onmouseover="this.style.backgroundPosition='left -40px'"
 				onmouseout="this.style.backgroundPosition='left top'" />
 		</form>

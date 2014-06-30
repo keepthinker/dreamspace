@@ -1,6 +1,7 @@
 package com.dreamspace.dao.support;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -8,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.dreamspace.bean.Blog;
+import com.dreamspace.bean.User;
 import com.dreamspace.dao.BlogDAO;
 
 
@@ -34,7 +36,7 @@ class RDBBlogDAO implements BlogDAO{
 				blog.setCreatedTime(rs.getDate("created_time"));
 				blog.setModifiedTime(rs.getDate("modified_time"));
 				blog.setCommentSum(rs.getInt("comment_sum"));
-				blog.setAuthor(rs.getString("user_name"));
+				blog.setAuthor(new User(rs.getString("user_name")));
 				blogList.add(blog);
 			}
 		} catch (SQLException e) {
@@ -51,8 +53,20 @@ class RDBBlogDAO implements BlogDAO{
 	}
 
 	public boolean addBlog(Blog blog) {
-		// TODO Auto-generated method stub
-		return false;
+		Connection con=DatabaseHelper.getConnectionFromDBCP2();
+		String sql="insert into blog(user_id,title,content,modified_time) values(?,?,?,?)";
+		PreparedStatement ps=null;
+		try {
+			ps=con.prepareStatement(sql);
+			ps.setInt(1, blog.getAuthor().getUserId());
+			ps.setString(2, blog.getTitle());
+			ps.setString(3,blog.getContent());
+			ps.setDate(4,new Date(blog.getModifiedTime().getTime()));
+			return ps.executeUpdate()==1;
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return false;
+		}
 	}
 
 	public boolean updateBlogContent(String content, int blogId) {

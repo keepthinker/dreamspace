@@ -14,6 +14,7 @@ import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.Subject;
 
 import com.dreamspace.bean.Blog;
+import com.dreamspace.bean.User;
 import com.dreamspace.dao.support.DAOFactoryHelper;
 /**
  * 	pageSize : 20 default<br/>
@@ -32,28 +33,23 @@ public class BlogDisplay extends HttpServlet{
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
-		Subject currentUser= SecurityUtils.getSubject();
-		Object userId=currentUser.getSession().getAttribute("userId");
-		if(userId==null){
-			userId=DAOFactoryHelper.getUserDAO().
-					getUserIdByUsername((String)currentUser.getPrincipal());
-			Session session = currentUser.getSession();
-			session.setAttribute( "userId", userId);
-		}
-		logger.info("username : "+currentUser.getPrincipal());
-		List<Blog> blogList=DAOFactoryHelper.getBlogDAO().getSimpleBlogListByUserId((Integer)userId);
-		logger.info("blogList : "+blogList);
-		
+		User  user=ServletUtils.getUserFromShiroSession();
+		logger.debug("user : "+user);
+		List<Blog> blogList=DAOFactoryHelper.getBlogDAO().getSimpleBlogListByUserId(((User)user).getUserId());
+		logger.debug("blogList : "+blogList);
+
 		simplifyBlogList(blogList);
 		req.setAttribute("blogList", blogList);
-		req.setAttribute("userName", currentUser.getPrincipal());
+		req.setAttribute("user", user);
 		getServletContext().getRequestDispatcher("/WEB-INF/blog_display.jsp").forward(req, resp);
 	}
 	private void simplifyBlogList(List<Blog> blogList){
 		for(Blog blog:blogList){
-			blog.setContent(blog.getContent().substring(0, 220)+"...");
+			if(blog.getContent().length()>220){
+				blog.setContent(blog.getContent().substring(0, 220)+"...");
+			}
 		}
 	}
-	
+
 
 }

@@ -12,8 +12,8 @@ public interface UserDAO {
 	public boolean addUser(User u);
 	/**
 	 * 如果数据库中没发现想要的数据的话返回-1
-	 * @param username
+	 * @param userName
 	 * @return
 	 */
-	public int getUserIdByUsername(String username);
+	public int getUserIdByUserName(String userName);
 }

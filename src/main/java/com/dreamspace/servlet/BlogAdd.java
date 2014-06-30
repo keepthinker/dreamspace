@@ -1,6 +1,8 @@
 package com.dreamspace.servlet;
 
 import java.io.IOException;
+import java.util.Calendar;
+import java.util.Date;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -9,11 +11,19 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.log4j.Logger;
 import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.Subject;
 
-public class BlogUpdate extends HttpServlet{
+import com.dreamspace.bean.Blog;
+import com.dreamspace.bean.User;
+/**
+ * 通过blogAdd跳转到blog_edit.jsp 并且request中传updateType=blog_add
+ * @author keepthinker
+ *
+ */
+public class BlogAdd extends HttpServlet{
 
-	Logger logger=Logger.getLogger(BlogUpdate.class);
+	Logger logger=Logger.getLogger(BlogAdd.class);
 	private static final long serialVersionUID = 596555007331575913L;
 
 	@Override
@@ -25,16 +35,10 @@ public class BlogUpdate extends HttpServlet{
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
-		logger.info("enter BlogUpdate Servlet");
-		String title=req.getParameter("title");
-		String content=req.getParameter("content");
-		logger.info("title : "+title+" content : "+content);
-		
-		Subject currentUser=SecurityUtils.getSubject();
-		String userName=(String)currentUser.getPrincipal();
-		logger.info("userName : "+userName);
+		logger.info("enter BlogAdd Servlet");
+		req.setAttribute("updateType", "blog_add");
+		req.setAttribute("user", ServletUtils.getUserFromShiroSession());
+		getServletContext().getRequestDispatcher("/WEB-INF/blog_edit.jsp").forward(req, resp);
 		
 	}
-
-
 }

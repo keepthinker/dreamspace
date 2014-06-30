@@ -12,6 +12,7 @@ import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.Subject;
 
+import com.dreamspace.bean.User;
 import com.dreamspace.dao.support.DAOFactoryHelper;
 /**
  * http protocol<br/>
@@ -35,10 +36,14 @@ public class Login extends HttpServlet{
 		//		String password=req.getParameter("password");
 		logger.info("enter login servlet");
 		Subject currentUser = SecurityUtils.getSubject();
+		String userName=(String)currentUser.getPrincipal();
 		int userId=DAOFactoryHelper.getUserDAO().
-				getUserIdByUsername((String)currentUser.getPrincipal());
+				getUserIdByUserName(userName);
 		Session session = currentUser.getSession();
-		session.setAttribute( "userId", userId);
+		User user=new User();
+		user.setUserId(userId);
+		user.setNickname(userName);
+		session.setAttribute( "user", user);
 		String redirectUrl="http://localhost:8080/dreamspace/blog_display";
 		resp.sendRedirect(redirectUrl);
 	}
