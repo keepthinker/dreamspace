@@ -9,6 +9,7 @@
 <%-- ${pageContext.request.contextPath}/ --%>
 <link href="css/blog_display.css" rel="stylesheet" type="text/css"
 	media="all" />
+<script type="text/javascript" src="js/jquery-1.10.2.js"></script>
 <title>梦空间主页</title>
 </head>
 

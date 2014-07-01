@@ -9,6 +9,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.log4j.Logger;
 
+import com.dreamspace.bean.RegisterInfo;
+import com.dreamspace.dao.support.DAOFactoryHelper;
+
 /**
  * http protocol<br/>
  * input parameter:<br/>
@@ -32,6 +35,12 @@ public class Register extends HttpServlet{
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		logger.info("enter Register servlet");
+		String userName=req.getParameter("user_name");
+		String password=req.getParameter("password");
+		DAOFactoryHelper.getUserDAO().addRegisterInfo(new RegisterInfo(userName,password));
+		String redirectUrl="http://localhost:8080/dreamspace/blog_display";
+		resp.sendRedirect(redirectUrl);
+		
 	}
 
 }

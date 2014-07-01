@@ -75,7 +75,7 @@
 			<td height="40">&nbsp;</td>
 			<td width="12">&nbsp;</td>
 			<td width="696" valign="middle"><span class="字体1">还没有梦空间-博客账号？立即加入</span></td>
-			<td width="143" valign="top"><a href="registry.html"> <input
+			<td width="143" valign="top"><a href="register.html"> <input
 					name="button" type="button" class="btn11"
 					onmouseover="this.style.backgroundPosition='left -40px'"
 					onmouseout="this.style.backgroundPosition='left top'" value="马上注册" /></a></td>

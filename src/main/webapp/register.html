@@ -56,10 +56,11 @@
     <td colspan="6" valign="middle" bgcolor="#FFFFCC"><span class="STYLE1">欢迎注册梦空间博客，请填写以下内容----></span></td>
     <td width="180">&nbsp;</td>
   </tr>
+  <form action="register" method="post">
   <tr>
     <td height="50">&nbsp;</td>
     <td width="127" valign="middle" bgcolor="#FFFFCC"><span class="STYLE2">设置用户名</span></td>
-    <td colspan="2" valign="middle" bgcolor="#FFFFCC"><input  type="text" name="username" id="username" size="20" value="输入用户名" style="font-size:24px" 
+    <td colspan="2" valign="middle" bgcolor="#FFFFCC"><input  type="text" name="user_name" id="username" size="20" value="输入用户名" style="font-size:24px" 
 	        onmouseover="this.style.borderColor='#FF6600'" onmouseout="this.style.borderColor=''" onFocus="if(value =='输入用户名'){value =''}" 
 	        onBlur="if (value ==''){value='输入用户名'}"/></td>
     <td colspan="3" valign="middle" bgcolor="#FFFFCC"> <span class="STYLE3"> 注意：用户名最多为15个字符</span></td>
@@ -68,16 +69,17 @@
   <tr>
     <td height="53">&nbsp;</td>
     <td valign="middle" bgcolor="#FFFFCC"><span class="STYLE2">设置密码</span></td>
-    <td colspan="2" valign="middle" bgcolor="#FFFFCC"><input name="pwd" id="pwd" type="password" size="20" value="输入密码" style="font-size:24px"
+    <td colspan="2" valign="middle" bgcolor="#FFFFCC"><input name="password" id="pwd" type="password" size="20" value="输入密码" style="font-size:24px"
 	     onmouseover="this.style.borderColor='#FF6600'" onmouseout="this.style.borderColor=''" onFocus="if(value =='输入密码'){value =''}" 
 	        onBlur="if (value ==''){value='输入密码'}"/></td>
     <td colspan="3" valign="middle" bgcolor="#FFFFCC"> <p class="STYLE3"> 注意：密码最多为20个字符，且只能包含数字、字母、下划线和$</p></td>
     <td>&nbsp;</td>
   </tr>
+  
   <tr>
     <td height="50">&nbsp;</td>
     <td valign="middle" bgcolor="#FFFFCC"><span class="STYLE2">输入邮箱</span></td>
-    <td colspan="2" valign="middle" bgcolor="#FFFFCC"><input  type="text" name="username" id="username" size="20" value="输入邮箱" style="font-size:24px" 
+    <td colspan="2" valign="middle" bgcolor="#FFFFCC"><input  type="text" name="email" id="username" size="20" value="" style="font-size:24px" 
 	        onmouseover="this.style.borderColor='#FF6600'" onmouseout="this.style.borderColor=''" onFocus="if(value =='输入邮箱'){value =''}" 
 	        onBlur="if (value ==''){value='输入邮箱'}"/></td>
 	<td colspan="3" valign="middle" bgcolor="#FFFFCC"> <span class="STYLE3"> 注意：邮箱只能为网易，QQ，雅虎</span></td>
@@ -86,7 +88,7 @@
   <tr>
     <td height="50"></td>
     <td></td>
-    <td colspan="2" valign="top"><input name="按钮" type="button" class="btn" onmouseover="this.style.backgroundPosition='left -40px'" 
+    <td colspan="2" valign="top"><input name="submit" type="submit" class="btn" onmouseover="this.style.backgroundPosition='left -40px'" 
 		    onmouseout="this.style.backgroundPosition='left top'" value="注   册" /></td>
     <td width="248" valign="middle" class="STYLE2 STYLE4">已有梦空间账号----&gt;</td>
     <td colspan="2" valign="top"><a href="login.html"><input name="按钮" type="button" class="btn" onmouseover="this.style.backgroundPosition='left -40px'" 
@@ -94,7 +96,9 @@
     </a></td>
     <td></td>
   </tr>
+  </form>
   <tr>
+  
     <td height="5"></td>
     <td></td>
     <td width="48"></td>

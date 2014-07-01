@@ -13,11 +13,23 @@ class RDBUserDAO implements UserDAO{
 
 	public boolean addRegisterInfo(RegisterInfo info) {
 		// TODO Auto-generated method stub
-		return false;
-	}
-
-	public boolean addUser(User u) {
-
+		Connection con=DatabaseHelper.getConnectionFromDBCP2();
+		PreparedStatement ps=null;
+		String sql="insert into user(user_name,password)"
+				+ " values(?,?)";
+		try {
+			ps=con.prepareStatement(sql);
+			ps.setString(1,info.getNickname());
+			ps.setString(2, info.getPassword());
+			return ps.executeUpdate()==1;
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return false;
+		}finally{
+			DatabaseUtils.close(null, ps, con);
+		}
+	}	
+	public boolean addUser(User u){
 		return false;
 	}
 	public int getUserIdByUserName(String username) {
@@ -40,4 +52,5 @@ class RDBUserDAO implements UserDAO{
 		}
 		return -1;
 	}
+
 }

@@ -21,6 +21,9 @@ public interface BlogDAO {
 	 * @return
 	 */
 	String getBlogContentByBlogId(int id);
+	
+	Blog getBlogByBlogId(int id);
+	
 	boolean addBlog(Blog blog);
 	/**
 	 * 修改指定blogId的博客内容

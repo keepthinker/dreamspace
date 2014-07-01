@@ -34,7 +34,7 @@
 		<servlet-name>BlogDisplay</servlet-name>
 		<url-pattern>/blog_display</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet>
 		<servlet-name>CommentAjax</servlet-name>
 		<servlet-class>com.dreamspace.servlet.CommentAjax</servlet-class>
@@ -43,7 +43,7 @@
 		<servlet-name>CommentAjax</servlet-name>
 		<url-pattern>/comment_ajax</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet>
 		<servlet-name>Login</servlet-name>
 		<servlet-class>com.dreamspace.servlet.Login</servlet-class>
@@ -52,7 +52,7 @@
 		<servlet-name>Login</servlet-name>
 		<url-pattern>/login</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet>
 		<servlet-name>Register</servlet-name>
 		<servlet-class>com.dreamspace.servlet.Register</servlet-class>
@@ -61,7 +61,7 @@
 		<servlet-name>Register</servlet-name>
 		<url-pattern>/register</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet>
 		<servlet-name>BlogAdd</servlet-name>
 		<servlet-class>com.dreamspace.servlet.BlogAdd</servlet-class>
@@ -70,7 +70,7 @@
 		<servlet-name>BlogAdd</servlet-name>
 		<url-pattern>/blog_add</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet>
 		<servlet-name>BlogUpdateDB</servlet-name>
 		<servlet-class>com.dreamspace.servlet.BlogUpdateDB</servlet-class>
@@ -79,6 +79,16 @@
 		<servlet-name>BlogUpdateDB</servlet-name>
 		<url-pattern>/blog_update_db</url-pattern>
 	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>SingleBlogDisplay</servlet-name>
+		<servlet-class>com.dreamspace.servlet.SingleBlogDisplay</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SingleBlogDisplay</servlet-name>
+		<url-pattern>/single_blog_display</url-pattern>
+	</servlet-mapping>
+	
 	<welcome-file-list>
 		<welcome-file>homepage.html</welcome-file>
 	</welcome-file-list>

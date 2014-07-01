@@ -44,6 +44,7 @@ public class BlogUpdateDB extends HttpServlet{
 		}else if(updateType.equals("blog_delete")){
 			
 		}
+		resp.sendRedirect("blog_display");
 	}
 	public void addBlogToDatabase(HttpServletRequest req){
 		String title=req.getParameter("title");

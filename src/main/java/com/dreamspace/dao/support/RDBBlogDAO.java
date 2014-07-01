@@ -37,7 +37,7 @@ class RDBBlogDAO implements BlogDAO{
 				blog.setModifiedTime(rs.getDate("modified_time"));
 				blog.setCommentSum(rs.getInt("comment_sum"));
 				blog.setAuthor(new User(rs.getString("user_name")));
-				blogList.add(blog);
+				blogList.add(0,blog);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -48,7 +48,6 @@ class RDBBlogDAO implements BlogDAO{
 	}
 
 	public String getBlogContentByBlogId(int id) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
@@ -66,6 +65,8 @@ class RDBBlogDAO implements BlogDAO{
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return false;
+		}finally{
+			DatabaseUtils.close(null, ps, con);
 		}
 	}
 
@@ -77,6 +78,36 @@ class RDBBlogDAO implements BlogDAO{
 	public boolean updateBlogTitle(String title, int blogId) {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+	public Blog getBlogByBlogId(int id) {
+		Connection con=DatabaseHelper.getConnectionFromDBCP2();
+		String sql=" select blog.id title,content,created_time,modified_time,"
+				+ "comment_sum,user_name from blog,user "
+				+ "where blog.id=? and blog.user_id=user.id limit 1;";
+		PreparedStatement ps=null;
+		ResultSet rs=null;
+		try {
+			ps=con.prepareStatement(sql);
+			ps.setInt(1,id);
+			rs=ps.executeQuery();
+			Blog blog;
+			rs.next();
+			blog=new Blog();
+			blog.setId(rs.getInt("id")); 
+			blog.setTitle(rs.getString("title"));
+			blog.setContent(rs.getString("content"));
+			blog.setCreatedTime(rs.getDate("created_time"));
+			blog.setModifiedTime(rs.getDate("modified_time"));
+			blog.setCommentSum(rs.getInt("comment_sum"));
+			blog.setAuthor(new User(rs.getString("user_name")));
+			return blog;
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return null;
+		}finally{
+			DatabaseUtils.close(rs, ps, con);
+		}
 	}
 
 }
