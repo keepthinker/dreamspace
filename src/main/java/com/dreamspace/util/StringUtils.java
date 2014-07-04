@@ -1,7 +1,7 @@
 package com.dreamspace.util;
 
 /* 
-* static helper classs for String
+* helper classs with static for String
 */
 public class StringUtils {
    
